@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- En-tête de la page -->
+        <meta charset="utf-8" />            <!-- C'est l'encodage de mon site -->
+        <meta name='description' content="Instructions à connaître en python"/>
+        <meta name='keywords' content="NSI, informatique, python"/>
+        <link rel="stylesheet" href="stylesheets/style.css"/>   <!--import des styles en .css-->
+        <title>Tutoriel python</title>     <!--C'est le titre de la page (écrit en haut de l'onglet du navigateur) -->
+        <script src="javascript/tutoriel.js"></script>
+    </head>
+
+    <header>
+      <h2>Tutoriel python pour les N.S.I.</h2>
+    </header>
+    <body>
+      <!--J'ai trouvé le bandeau de navigatio ici :
+      https://www.pierre-giraud.com/html-css-apprendre-coder-cours/creation-menu-deroulant/
+       -->
+      <nav>
+        <ul>
+          <li class="deroulant"><a href="#" id="navpremiersPas">Premiers pas &ensp;</a>
+            <ul class="sous">
+              <li id="navvariables"><a href="#">variables</a></li>
+              <li id="navboucles"><a href="#">boucles</a></li>
+              <li id="navconditions"><a href="#">structures conditionnelles</a></li>
+            </ul>
+          </li>
+          <li class="deroulant"><a href="#" id="navtuplesListes">tuples et listes &ensp;</a>
+            <ul class="sous">
+              <li id="navtuples"><a href="#">tuples</a></li>
+              <li id="navlistes"><a href="#">listes</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div id='premiersPas'>
+        <h1 id="Introduction">Introduction à python</h1>
+        <p>Python est un langage de programmation caractérisé par des blocs marqués par des indentations (touche tabulation).<br/>
+          Le respect de cette indentation est primordiale pour assurer la compilation du code.</p>
+
+        <div id="variables">
+          <h2>Les variables</h2>
+          <h3>Définition</h3>
+          <p>Une variable est une donnée de votre programme, stockée dans votre ordinateur.</p>
+          <p>En Python, pour donner une valeur à une variable, il suffit d'écrire <span class=codePython>nomVariable = valeur</span>.<br/>
+            Le symbole = est souvent représenté en langage courant par une flèche gauche &larr;.</p>
+            <p>Quelques règles à respecter&nbsp;:
+              <ol>
+                <li> le nom de la variable ne peut être composé que de lettres, majuscules ou minuscules, de chiffres et du symbole souligné &laquo; _ &raquo; (appelé underscore en anglais)&nbsp;;</li>
+                <li> le nom de la variable ne peut pas commencer par un chiffre&nbsp;;</li>
+                <li> le langage Python est sensible à la casse, ce qui signifie que des lettres majuscules et minuscules ne constituent pas la même variable (la variable <span class=codePython>AGE</span> est différente de <span class=codePython>aGe</span>, elle-même différente de <span class=codePython>age</span>).</li>
+              </ol>
+            </p>
+            <h3>Les types de données</h3>
+            <p>Une variable peuvent représenter :
+              <ul>
+                <li> un nombre (entier - int - ou en virgule flottante - float) sur lequel on peut effectuer des opérations :
+                  <ul>
+                    <li> opérations élémentaires (addition, soustraction, multiplication, division) : +, -, *, /</li>
+                    <li> élever à une certaine puissance : a**n pour &laquo;a puissance n&raquo;</li>
+                    <li> division entière sur les entiers : a//b et reste dans la disvision entière&nbsp;: a%b</li>
+                  </ul></li>
+                <li> une chaîne de caractères : toujours entre guillemets ou côtes<br/>
+                  Par exemple <span class=codePython>ch="Mon premier texte"</span> ou <span class=codePython>ch2='Mon deuxième texte'</span><br/>
+                  <u>Remarque :</u> "4" et 4 sont deux variables différentes et ne représente pas la même chose.<br/>
+                  On peut également effectuer des &laquo; sur ces chaînes &raquo; <span class=codePython>"texte"*2</span> donne "textetexte"&nbsp;;<br/>
+                  L'opérateur + permet de concaténer deux chaines : <span class=codePython>"mon"+"texte"</span> donne "montexte".<br/>
+                  <u>Remarque :</u> Une chaîne peut également être mise entre triples guillemets. Je l'utiliserai pour les commentaires de fonctions.
+                </li>
+                <li> un booléen : c'est-à-dire que la variable ne peut prendre que les valeurs True ou False (attention à la parenthèse indispensable).<br/>
+                  Ces booléens sont fondamentaux dans les tests et peuvent être combinés par différents opérateurs.</li>
+                <li> un tuple : par exemple <span class=codePython>a=(1,"mon texte",True)</span>&nbsp;;<br/>
+                  C'est une suite de valeurs entre parenthèses (même si elles peuvent être omises) qui peuvent être de types différents. </li>
+                <li> une liste (aussi appelé tableau) dans d'autres langages : <span class=codePython>liste=[10,50,24,15]</span>&nbsp;;<br/>
+                C'est une suite de valeurs entre crochets <strong>de même nature</strong>.</li>
+                <li> un dictionnaire : <span class=codePython>eleves={"nom":"Doe","prenom":"John"}</span>&nbsp;;<br/>
+                  Chaque élémént est sous la forme d'une clé à laquelle on donne une valeur.</li>
+                <li> un ensemble : <span class=codePython>nomEleves={"Antoine","Quentin"}</span>&nbsp;;<br/>
+                  Les valeurs ne sont pas classées.</li>
+                <li> une fonction : on en verra des exemples plus loin mais certaines peuvent être utilisées dès le début&nbsp;:<br/>
+                  <ul>
+                    <li> <span class=codePython>print(a)</span> : écrit en console la valeur de la variable a&nbsp;;</li>
+                    <li> <span class=codePython>type(a)</span> : donne le type de la variable a (int, float, string, ...).</li>
+                  </ul></li>
+
+              </ul>
+            </p>
+          </div>
+
+
+          <div id="boucles">
+            <h2>Les boucles</h2>
+            <p>Toute répétition d'actions similaires s'effectue sous la forme d'une boucle dans tout langage de programmation.<br/>
+              En python, on distingue deux boucles : <strong>for</strong> (&laquo;pour&raquo;) et <strong>while</strong> (&laquo;tant que&raquo;).<br/>
+            </p>
+            <h3>Boucle for</h3>
+            <p>Ce type de boucles s'écrit sous la forme :<br/>
+              <div class=codePython><span class=motCle>for</span> variable <span class=motCle>in</span> iterable:<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instructions
+              </div>
+              Un iterable peut être construit avec la fonction range, une chaîne de caractères, un tuple, une liste, ...<br/>
+              La variable prendra successivement les valeurs de l'itérable et les instructions seront effectuées autant de fois qu'il y a d'éléments dans l'itérable.<br/>
+            </p>
+            <h3>Boucle while</h3>
+            <p>Une boucle while s'écrit sous la forme :<br/>
+              <div class=codePython><span class=motCle>while</span> condition:<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instructions
+              </div>
+              où condition est un booléen.<br/>
+              Les instructions sont effectuées tant que la condition vaut True.<br/>
+              <strong>Il est donc impératif que la condition puisse évoluer au cours des instructions (l'évolution d'une variable suffit parfois) de sorte qu'elle passe à False. Sinon la boucle devient infinie.</strong>
+            </p>
+          </div>
+
+
+          <div id="conditions">
+            <h2>Les structures conditionnelles</h2>
+          </div>
+      </div>
+      <div id='tuplesListes'>
+        <h1>Introduction aux tuples et listes</h1>
+        <p>Les tuples et les listes sont des itérables&nbsp;: le parcourt de leur contenu se fait facilement avec une boucle for.</p>
+
+        <div id="tuples">
+          <p>Définition d'un tuple</p>
+        </div>
+
+        <div id="listes">
+          <p>Définition d'une liste</p>
+        </div>
+    </body>
+  </html>
