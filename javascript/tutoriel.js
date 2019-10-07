@@ -1,6 +1,8 @@
-let listeChap = ["premiersPas","tuplesListes"];
-let listeSousPartie = [["variables","boucles","conditions"],["tuples","listes"]];
+let listeChap = ["premiersPas","tuplesListes","imagesExemples"];
+let listeSousPartie = [["variables","boucles","conditions"],["tuples","listes"],[]];
 let contenuDiv = {};//j'en fais un objet plutôt qu'une liste
+let numImage = 0;
+let listeImages=["testsVariables.PNG","testsBoucles.PNG"];
 function initialization() {
     //Ma première idée était de cacher le contenu de chaque div
     /*for (let i=0;i<listeDiv.length;i++){
@@ -13,8 +15,10 @@ function initialization() {
     }
     //Et ceux des sous-parties
     for(i=0;i<listeChap.length;i++){
-      for(let j=0;j<listeSousPartie.length;j++){
-        contenuDiv[listeSousPartie[i][j]] = document.getElementById(listeSousPartie[i][j]).innerHTML;
+      if(listeSousPartie[i].length>0){
+        for(let j=0;j<listeSousPartie[i].length;j++){
+          contenuDiv[listeSousPartie[i][j]] = document.getElementById(listeSousPartie[i][j]).innerHTML;
+        }
       }
       contenuDiv[listeChap[i]] = document.getElementById(listeChap[i]).innerHTML;
     }
@@ -33,14 +37,31 @@ function initialization() {
       document.getElementById("nav"+String(prop)).onclick = function() {
         let idtexte = this.id.substring(3);//L'id du menu est de la forme nav... donc j'enlève les 3 premiers caractères
         document.getElementById("divConteneur").innerHTML = contenuDiv[idtexte];
-        console.log("idTexte:",idtexte,"  ",contenuDiv[idtexte])
+        if(idtexte="imagesExemples"){
+          actionBtns();     //JE remets les actions sur les boutons
+        }
       }
     }
 
 }
-function afficher(id){
-  //Cette fonction va afficher le contenu de la div concernée, ou plutôt va compléter la div "divConteneur"
-  document.getElementById("divConteneur").innerHTML = contenuDiv.id
+function actionBtns(){
+  //Action des boutons "Précédent" et "Suivant" du diaporama
+  document.getElementById("precedent").onclick = function() {
+    numImage=Math.max(numImage-1,0);//
+    document.getElementById("imageDiapo").src = "images/"+listeImages[numImage];
+    if(numImage==0){//Je cache le bouton précédent"
+      document.getElementById("precedent").style.visibility = "hidden"
+    }
+    document.getElementById("suivant").style.visibility = "visible"
+  }
+  document.getElementById("suivant").onclick = function() {
+    numImage=Math.min(numImage+1,listeImages.length-1);//
+    document.getElementById("imageDiapo").src = "images/"+listeImages[numImage];
+    if(numImage==listeImages.length-1){//Je cache le bouton précédent"
+      document.getElementById("suivant").style.visibility = "hidden"
+    }
+    document.getElementById("precedent").style.visibility = "visible"
+  }
 }
 
 window.onload = initialization;
