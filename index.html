@@ -32,6 +32,15 @@
               <li id="navlistes"><a href="#">listes</a></li>
             </ul>
           </li>
+          <li class="deroulant"><a href="#" id="navimagesExemples">Exemples en image &ensp;</a>
+            <!--<ul class="sous">
+              <li id="navimagesVariables"><a href="#">variables</a></li>
+              <li id="navimagesBoucles"><a href="#">boucles</a></li>
+              <li id="navimagesConditions"><a href="#">conditions</a></li>
+              <li id="navimagesTuples"><a href="#">tuples</a></li>
+              <li id="navimagesListes"><a href="#">listes</a></li>
+            </ul>-->
+          </li>
         </ul>
       </nav>
 
@@ -67,7 +76,10 @@
                   <u>Remarque :</u> "4" et 4 sont deux variables différentes et ne représente pas la même chose.<br/>
                   On peut également effectuer des &laquo; sur ces chaînes &raquo; <span class=codePython>"texte"*2</span> donne "textetexte"&nbsp;;<br/>
                   L'opérateur + permet de concaténer deux chaines : <span class=codePython>"mon"+"texte"</span> donne "montexte".<br/>
-                  <u>Remarque :</u> Une chaîne peut également être mise entre triples guillemets. Je l'utiliserai pour les commentaires de fonctions.
+                  <u>Remarque :</u> Une chaîne peut également être mise entre triples guillemets. Je l'utiliserai pour les commentaires de fonctions.<br/>
+                  Le premier élément de la chaîne ch est <span class=codePython>ch[0]</span>, le dernier peut être obtenu par <span class=codePython>ch[-1]</span>.<br/>
+                  La fonction len permet d'obtenir la longueur de la chaîne : <span class=codePython>len(ch)</span>.<br/>
+                  On peut également extraire une partie de la chaine : <span class=codePython>ch[3:]</span> qui donne " premier texte", <span class=codePython>ch[:6]</span> qui donne "Mon pr", voire <span class=codePython>ch[3:6]</span> qui donne " pr".
                 </li>
                 <li> un booléen : c'est-à-dire que la variable ne peut prendre que les valeurs True ou False (attention à la parenthèse indispensable).<br/>
                   Ces booléens sont fondamentaux dans les tests et peuvent être combinés par différents opérateurs.</li>
@@ -103,6 +115,15 @@
               Un iterable peut être construit avec la fonction range, une chaîne de caractères, un tuple, une liste, ...<br/>
               La variable prendra successivement les valeurs de l'itérable et les instructions seront effectuées autant de fois qu'il y a d'éléments dans l'itérable.<br/>
             </p>
+            <p><u>Exemple :</u><br/>
+              <div class=codePython>
+                montexte="texte initial"<br/>
+                nouveauTxt = montexte[0]<br/>
+                <span class=motCle>for</span> lettre <span class=motCle>in</span> montexte[1:]:<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nouveauTxt+="_"+lettre
+              </div>
+              À la fin de ce programme, nouveauTxt vaut "t_e_x_t_e_ _i_n_i_t_i_a_l".
+            </p>
             <h3>Boucle while</h3>
             <p>Une boucle while s'écrit sous la forme :<br/>
               <div class=codePython><span class=motCle>while</span> condition:<br/>
@@ -112,6 +133,20 @@
               Les instructions sont effectuées tant que la condition vaut True.<br/>
               <strong>Il est donc impératif que la condition puisse évoluer au cours des instructions (l'évolution d'une variable suffit parfois) de sorte qu'elle passe à False. Sinon la boucle devient infinie.</strong>
             </p>
+            <p><u>Exemple :</u><br/>
+              <div class=codePython>
+                montexte="texte initial"<br/>
+                nouveauTxt2 = montexte[0]<br/>
+                i=1<br/>
+                <span class=motCle>while</span> montexte[i]!="i":<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nouveauTxt2+="_"+montexte[i]<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1
+              </div>
+              À la fin de ce programme, nouveauTxt2 vaut "t_e_x_t_e_ ".<br/>
+              On a parcouru chaque lettre de la chaîne de caractère jusqu'à ce qu'on tombe sur un "i".<br/>
+              Si la chaîne n'avait pas eu cette lettre "i", la boucle ne se serait pas arrêtée. On aurait pu le vérifier auparavant ou ajouter une condition d'arrêt supplémentaire (sur la longueur de la chaîne):
+              <div class=codePython><span class=motCle>while</span> montexte[i]!="i" <span class=motCle>and</span> i&lt;len(montexte):<br/></div>
+            </p>
           </div>
 
 
@@ -119,6 +154,8 @@
             <h2>Les structures conditionnelles</h2>
           </div>
       </div>
+
+
       <div id='tuplesListes'>
         <h1>Introduction aux tuples et listes</h1>
         <p>Les tuples et les listes sont des itérables&nbsp;: le parcourt de leur contenu se fait facilement avec une boucle for.</p>
@@ -130,5 +167,16 @@
         <div id="listes">
           <p>Définition d'une liste</p>
         </div>
+      </div>
+
+
+      <div id="imagesExemples">
+        <p id="diaporama">
+          <img id="imageDiapo" src="images/testsVariables.PNG">
+          <p id="commentDiaporama">Test de commandes sur des variables
+          </p>
+          <button id="precedent">Précédent</button><button id="suivant">Suivant</button>
+        </p>
+      </div>
     </body>
   </html>
