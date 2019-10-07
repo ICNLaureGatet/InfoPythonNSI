@@ -60,6 +60,13 @@ header > h2{
 	/*Je mets en bleu les mots clés en python*/
 	color:blue;
 }
+#diaporama{
+	text-align:center;
+	width=50%;
+}
+
+
+
 /**************************************************************************
 Pour le bandeau de navigation
 J'ai trouvé ça ici :
