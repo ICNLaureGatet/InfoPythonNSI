@@ -64,9 +64,35 @@ header > h2{
 	text-align:center;
 	width=50%;
 }
+th{
+    background-color:rgba(0,0,255,0.3);
+    text-decoration: bold;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
 
-
-
+table, th, td {
+  border: 1px solid black;
+}
+td{
+    text-align: center;
+    width:14%;
+}
+button {
+    border:none;
+    padding:6px;
+    margin:0 10px 15px 10px;
+    border-radius:2px;
+    box-shadow:3px 3px 12px #999;
+    background:#fff;
+    font:bold 13px Arial;
+    color:#555;
+}
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
 /**************************************************************************
 Pour le bandeau de navigation
 J'ai trouvé ça ici :
@@ -75,7 +101,7 @@ https://www.pierre-giraud.com/html-css-apprendre-coder-cours/creation-menu-derou
 nav{
     width: 100%;
     margin: 0 auto;
-    background-color: white;
+    background-color: rgb(220,220,255);
     position: sticky;
     top: 0px;
 }
