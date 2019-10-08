@@ -1,8 +1,12 @@
 let listeChap = ["premiersPas","tuplesListes","imagesExemples"];
-let listeSousPartie = [["variables","boucles","conditions"],["tuples","listes"],[]];
+let listeSousPartie = [["variables","boucles","conditions","fonctions"],["tuples","listes"],[]];
 let contenuDiv = {};//j'en fais un objet plutôt qu'une liste
 let numImage = 0;
-let listeImages=["testsVariables.PNG","testsBoucles.PNG"];
+let listeImages=["testsVariables.PNG","testsBoucles.PNG","testsConditions.PNG"];
+let commentDiapo = ["Test de commandes sur des variables",
+  "Tests sur des boucles",
+  "Tests sur des insructions conditionnelles",
+  "Tests sur des fonctions"]
 function initialization() {
     //Ma première idée était de cacher le contenu de chaque div
     /*for (let i=0;i<listeDiv.length;i++){
@@ -11,7 +15,7 @@ function initialization() {
     //Je récupère le contenu de chaque div de la page
     //Tout d'abord ceux des chapitres (de listeChap)
     for(let i=0;i<listeChap.length;i++){
-      contenuDiv[listeChap[i]] = document.getElementById(listeChap[i]).innerHtml;
+      contenuDiv[listeChap[i]] = document.getElementById(listeChap[i]).innerHTML;
     }
     //Et ceux des sous-parties
     for(i=0;i<listeChap.length;i++){
@@ -46,21 +50,24 @@ function initialization() {
 }
 function actionBtns(){
   //Action des boutons "Précédent" et "Suivant" du diaporama
+  document.getElementById("precedent").style.visibility = "hidden"
   document.getElementById("precedent").onclick = function() {
     numImage=Math.max(numImage-1,0);//
     document.getElementById("imageDiapo").src = "images/"+listeImages[numImage];
     if(numImage==0){//Je cache le bouton précédent"
-      document.getElementById("precedent").style.visibility = "hidden"
+      document.getElementById("precedent").style.visibility = "hidden";
     }
-    document.getElementById("suivant").style.visibility = "visible"
+    document.getElementById("suivant").style.visibility = "visible";
+    document.getElementById("commentDiaporama").innerHTML = commentDiapo[numImage];
   }
   document.getElementById("suivant").onclick = function() {
     numImage=Math.min(numImage+1,listeImages.length-1);//
     document.getElementById("imageDiapo").src = "images/"+listeImages[numImage];
     if(numImage==listeImages.length-1){//Je cache le bouton précédent"
-      document.getElementById("suivant").style.visibility = "hidden"
+      document.getElementById("suivant").style.visibility = "hidden";
     }
-    document.getElementById("precedent").style.visibility = "visible"
+    document.getElementById("precedent").style.visibility = "visible";
+    document.getElementById("commentDiaporama").innerHTML = commentDiapo[numImage]
   }
 }
 
