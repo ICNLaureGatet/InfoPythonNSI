@@ -79,9 +79,18 @@ pre>.codePython {
     color: rgb(90, 90, 90);
 }
 
-#diaporama {
+.diaporama {
     text-align: center;
     width: 100%;
+}
+
+#idDiapo {
+    text-align: center;
+}
+
+.imageDiapo {
+    width: 75%;
+    float: none;
 }
 
 th {
