@@ -19,6 +19,7 @@
 </header>
 
 <body>
+    <p>Le site <a href="http://www.pythontutor.com/visualize.html#mode=edit" target="_blank">pythontutor</a> permet de tester en ligne certains programmes en voyant comment les affectations des différentes variables se produisent.</p>
     <!--J'ai trouvé le bandeau de navigation ici :
       https://www.pierre-giraud.com/html-css-apprendre-coder-cours/creation-menu-deroulant/
        -->
@@ -323,11 +324,58 @@ l2[1][0]="k" <span class="comment">#l2 devient [["a","b"],["k","d","e"],["f","g"
 
                 </ul>
             </p>
+
+            <h3>Listes en compréhension</h3>
+            <p>Voici les différentes structures de listes en compréhension avec leur équivalent en écriture plus classique :</p>
+            <ul>
+                <li>Une boucle simple est construite sous cette forme :
+                    <pre class="codePython">
+<span class="motCle">for</span> &lt;the_element&gt; <span class="motCle">in</span> &lt;the_iterable&gt;:
+    &lt;the_expression&gt;
+</pre> La structure de la liste en compréhension est la suivante :
+                    <pre class="codePython">
+[&lt;the_expression&gt; <span class="motCle">for</span> &lt;the_element&gt; <span class="motCle">in</span> &lt;the_iterable&gt;]
+</pre>
+                </li>
+                <li>Syntaxe avec condition :
+                    <pre class="codePython">
+<span class="motCle">for</span> &lt;the_element&gt; <span class="motCle">in</span> &lt;the_iterable&gt;:
+    <span class="motCle">if</span> &lt;the_condition&gt;:
+        &lt;the_expression&gt;
+</pre> En compréhension, cela s’écrit :
+                    <pre class="codePython">
+[&lt;the_expression&gt; <span class="motCle">for</span> &lt;the_element&gt; <span class="motCle">in</span> &lt;the_iterable&gt; <span class="motCle">if</span> &lt;the_condition&gt;]
+</pre>
+                </li>
+                <li>Toujours avec une condition, mais cette fois-ci avec un else :
+                    <pre class="codePython">
+<span class="motCle">for</span> &lt;the_element&gt; <span class="motCle">in</span> &lt;the_iterable&gt;:
+    <span class="motCle">if</span> &lt;the_condition&gt;:
+        &lt;the_expression&gt;
+    <span class="motCle">else</span> :
+        &lt;other_expression&gt;
+</pre> En compréhension, cela s’écrit :
+                    <pre class="codePython">
+[&lt;the_expression&gt; <span class="motCle">if</span> &lt;the_condition&gt; <span class="motCle">else</span> &lt;other_expression&gt; <span class="motCle">for</span> &lt;the_element&gt; <span class="motCle">in</span> &lt;the_iterable&gt;]
+</pre>
+                </li>
+            </ul>
+            <p>Exemples :</p>
+            <ul>
+                <li>Compter le nombre de grains de riz sur chaque case de l'échiquier lorsqu'on en pose d'abord 1, puis 2, puis 4 et ainsi de suite en doublant le nombre à chaque fois.<br/>
+                    <span class="codePython">echiquier=[2**n <span class="motCle">for</span> n <span class="motCle">in</span> range(64)]</span>
+                </li>
+                <li>Extraire les multiples de 7 de la liste des 500 premiers nombres entiers.<br/>
+                    <span class="codePython">multiple7=[n <span class="motCle">for</span> n <span class="motCle">in</span> range(500) <span class="motCle">if</span> n%7==0]</span>
+                </li>
+            </ul>
             <p class="diaporama">
                 <a href="https://python.sdv.univ-paris-diderot.fr/11_plus_sur_les_listes/" target="_blank"><img class="imageDiapo" src="images/imageListes.png"></a>
             </p>
         </div>
+
     </div>
+
 
 
     <div id="imagesExemples">
