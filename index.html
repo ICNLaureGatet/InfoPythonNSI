@@ -39,6 +39,12 @@
                     <li id="navlistes"><a href="#">listes</a></li>
                 </ul>
             </li>
+            <li class="deroulant"><a href="#" id="navdictionnaires">dictionnaires &ensp;</a>
+                <ul class="sous">
+                    <li id="navdicos"><a href="#">Utilisation</a></li>
+                    <li id="navdonnees"><a href="#">Fichier de données</a></li>
+                </ul>
+            </li>
             <li class="deroulant"><a href="#" id="navimagesExemples">Exemples en image &ensp;</a>
                 <!--<ul class="sous">
               <li id="navimagesVariables"><a href="#">variables</a></li>
@@ -263,7 +269,7 @@
                     <li>Pour permuter trois valeurs : <span class="codePython">a,b,c=b,c,a</span></li>
                     <li>Exemple d'affectation multiple avec le quotient et le reste dans la division euclidienne: <span class="codePython">q,r=a//b,a%r</span>.<br/> Cela peut aussi être effectué à l'aide de la fonction divmod : <span class="codePython">q,r=divmod(a,b)</span></li>
                 </ul>
-                Cette affectation multplie est surtout pratique dans les fonctions.
+                Cette affectation multiple est surtout pratique dans les fonctions.
             </p>
             <p class="diaporama">
                 <a href="https://livebook.manning.com/book/python-workout/chapter-3/v-2/34" target="_blank"><img class="imageDiapo" src="images/imageTuples.png"></a>
@@ -313,8 +319,18 @@ l=[["a","b"],["c","d","e"],["f","g"]] <span class="comment"># liste de 3 éléme
                     <li><span class="codePython">l1[:]</span> : créé une copie de la liste l1.</li>
                 </ul>
                 <ul> <b>Copie de liste</b><br/>
-                    <span class="codePython">l2=list(l1)</span>, <span class="codePython">l2=l1[:]</span> et <span class="codePython">l2=copy(l1)</span> sont des instructions équivalentes qui permettent de copier les éléments de l1 dans l2.<br/> Dans
-                    ce cas, une modification dans l2 n'aura aucune incidence sur l1.<br/> Par contre cela ne fonctionnera pas sur des listes de listes où il faudra utiliser une copie en profondeur (à l'aide du module copy) :<br/>
+                    <span class="codePython">l2=list(l1)</span>, <span class="codePython">l2=l1[:]</span> et <span class="codePython">l2=l1.copy()</span> sont des instructions équivalentes qui permettent de copier les éléments de l1 dans l2.<br/> Dans
+                    ce cas, une modification dans l2 n'aura aucune incidence sur l1.<br/> Le module copy permet également de faire une copy de la liste :
+                    <pre class="codePython">
+import copy
+l1=[1,2,3]
+l2=copy.copy(l1)
+                    </pre> ou bien :
+                    <pre class="codePython">
+from copy import copy
+l1=[1,2,3]
+l2=copy(l1)
+                    </pre> Par contre cela ne fonctionnera pas sur des listes de listes où il faudra utiliser une copie en profondeur (toujours à l'aide du module copy) :<br/>
                     <pre class="codePython">
 import copy
 l1=[["a","b"],["c","d","e"],["f","g"]]
@@ -374,6 +390,77 @@ l2[1][0]="k" <span class="comment">#l2 devient [["a","b"],["k","d","e"],["f","g"
             </p>
         </div>
 
+    </div>
+
+    <div id='dictionnaires'>
+        <h1>Les dictionnaires</h1>
+        <div id="dicos">
+            <h2>Utiliser un dictionnaire</h2>
+            <h3>Définition et premiers dictionnaires</h3>
+            <p>Un dictionnaire, objet de type dict, ressemble à une liste. La différence c’est que les données ne seront pas accessibles par un index mais par un mot clé. De plus ces données ne seront pas nécessairement du même type (alors que c’est recommandé
+                pour les listes).</p>
+
+            <p>Un dictionnaire est alors un ensemble de couples de la forme clé-valeur mis entre accolades et séparés par une virgule.</p>
+            <pre class="codePython">
+Adam={} #pour un dictionnaire vide
+Noémie={"Français":12.3, "Anglais":13.4, "EnsScient": 14.3, "H-G":7.8, "EPS":17.5,"Maths":11.6, "Physique":12.7, "NSI":13.3}
+            </pre>
+            <p>On peut alors tester la présence d'un élément (ou plutôt de sa clé) :<br/>
+                <span class="codePython">"NSI" <span class="motCle">in</span> Noémie</span> renvoie True.<br/>
+                <span class="codePython">"SES" <span class="motCle">in</span> Noémie</span> renvoie False.
+            </p>
+            <p>On peut modifier la valeur d'un<br/>
+                <span class="codePython">"NSI" <span class="motCle">in</span> Noémie</span> renvoie True.<br/>
+                <span class="codePython">"SES" <span class="motCle">in</span> Noémie</span> renvoie False.
+            </p>
+            <p>On peut également supprimer un élément :<br/>
+                <span class="codePython">del(Noémie["NSI"]) </span> supprime le couple clé-value ("NSI",13.3).<br/>
+                <span class="codePython">del(Noémie["SES"])</span> lève une erreur.<br/>
+                <span class="codePython">Noémie.pop("NSI") </span> supprime le couple clé-value ("NSI",13.3) et renvoie 13.3.<br/>
+            </p>
+
+            <h3>Parcourir un dictionnaire</h3>
+            <p>On peut parcourir un dictionnaire de 3 façons :</p>
+            <ul>
+                <li>par les clés:
+                    <pre class="codePython">
+for cle in Noémie:
+    print(cle,Noémie[cle],sep=" : ")
+                </pre></li>
+                <li>par les valeurs (mais ce n'est pas très judicieux, d'autant que cela ne fonctionnera pas correctement si deux clés différentes possèdent la même valeur) :
+                    <pre class="codePython">
+for valeur in Noémie.values():
+    print(valeur)
+                    </pre> </li>
+                <li>par le couple clé-valeur:
+                    <pre class="codePython">
+for cle, valeur in Noémie.items():
+    print(cle,valeur,sep=" : ")
+                </pre></li>
+                </li>
+            </ul>
+        </div>
+        <div id="donnees">
+            <h2>Importer un fichier de données</h2>
+            <p>On peut extraire les données d'un fichier csv où pour chaque ligne, la valeur du descripteur sera identifié par une clé qui sera le nom du descripteur :</p>
+            <pre class="codePython">
+import csv
+fichier=open("countries.csv","r",encoding="utf-8")
+extraction = csv.DictReader(fichier,delimiter=";")
+pays = []
+for ligne in extraction:
+    pays.append(dict(ligne))
+fichier.close()
+            </pre>
+            <ul>
+                <li>ligne 1 : on importe le module csv</li>
+                <li>ligne 2 : on ouvre le fichier csv par python en lecture seule</li>
+                <li>ligne 3 : on extrait les données sous la forme qui sera interprétée ensuite comme un dictionnaire </li>
+                <li> ligne 4 : on crée la liste accueillant les données </li>
+                <li>lignes 5 et 6 : on complète la liste avec pour chaque élément un dictionnaire dont les clés sont les descripteurs de la table et les valeurs, les valeurs associées de la ligne </li>
+                <li>ligne 7 : on ferme le fichier csv.</li>
+            </ul>
+        </div>
     </div>
 
 
