@@ -1,7 +1,8 @@
-let listeChap = ["premiersPas", "tuplesListes", "imagesExemples"];
+let listeChap = ["premiersPas", "tuplesListes", "dictionnaires", "imagesExemples"];
 let listeSousPartie = [
     ["variables", "boucles", "conditions", "fonctions"],
     ["tuples", "listes"],
+    ["dicos", "donnees"],
     []
 ];
 let contenuDiv = {}; //j'en fais un objet plutôt qu'une liste
@@ -49,7 +50,7 @@ function initialization() {
         document.getElementById("nav" + String(prop)).onclick = function() {
             let idtexte = this.id.substring(3); //L'id du menu est de la forme nav... donc j'enlève les 3 premiers caractères
             document.getElementById("divConteneur").innerHTML = contenuDiv[idtexte];
-            if (idtexte = "imagesExemples") {
+            if (idtexte === "imagesExemples") {
                 actionBtns(); //JE remets les actions sur les boutons
             }
         }
@@ -63,7 +64,7 @@ function actionBtns() {
     document.getElementById("precedent").onclick = function() {
         numImage = Math.max(numImage - 1, 0); //
         document.getElementById("imageDiapo").src = "images/" + listeImages[numImage];
-        if (numImage == 0) { //Je cache le bouton précédent"
+        if (numImage === 0) { //Je cache le bouton précédent"
             document.getElementById("precedent").style.visibility = "hidden";
             document.getElementById("precedent").style.display = "none";
         }
@@ -74,7 +75,7 @@ function actionBtns() {
     document.getElementById("suivant").onclick = function() {
         numImage = Math.min(numImage + 1, listeImages.length - 1); //
         document.getElementById("imageDiapo").src = "images/" + listeImages[numImage];
-        if (numImage == listeImages.length - 1) { //Je cache le bouton précédent"
+        if (numImage === listeImages.length - 1) { //Je cache le bouton précédent"
             document.getElementById("suivant").style.visibility = "hidden";
             document.getElementById("suivant").style.display = "none";
         }
