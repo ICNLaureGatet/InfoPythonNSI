@@ -296,27 +296,27 @@ l=[["a","b"],["c","d","e"],["f","g"]] <span class="comment"># liste de 3 éléme
             <h3>Méthodes sur les listes</h3>
             <p>
                 <ul> <b>tri de listes</b>
-                    <li><span class="codePython">sort()</span> : ordonne la liste dans l'ordre croissant&nbsp;;<br/> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="codePython">sorted(l)</span> crée une nouvelle liste avec les valeurs rangées dans l'ordre croissant&nbsp;;</li>
-                    <li><span class="codePython">reverse()</span> : renverse l'ordre des valeurs de la liste&nbsp;;<br/> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="codePython">l.sort(reverse=True)</span> : ordonne la liste dans l'ordre décroissant.</li>
+                    <li><span class="codePython">lst.sort()</span> : ordonne la liste <code>lst</code> dans l'ordre croissant&nbsp;;<br/> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="codePython">sorted(lst)</span> crée une nouvelle liste avec les valeurs de <code>lst</code> rangées dans l'ordre croissant&nbsp;;</li>
+                    <li><span class="codePython">lst.reverse()</span> : renverse l'ordre des valeurs de la liste <code>lst</code>&nbsp;;<br/> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="codePython">lst.sort(reverse=True)</span> : ordonne la liste <code>lst</code> dans l'ordre décroissant.</li>
                 </ul>
                 <ul> <b>Ajouter des éléments à la liste</b>
-                    <li><span class="codePython">append(elt)</span> : ajoute un élément à la fin de la liste&nbsp;;</li>
-                    <li><span class="codePython">extend(liste)</span> : ajoute tous les éléments de la nouvelle liste dans la liste initiale&nbsp;;</li>
-                    <li><span class="codePython">insert(nb,elt)</span> : insère un élément en position nb dans la liste.</li>
+                    <li><span class="codePython">lst.append(elt)</span> : ajoute l'élément <code>elt</code> à la fin de la liste <code>lst</code>&nbsp;;</li>
+                    <li><span class="codePython">lst.extend(lst2)</span> : ajoute à la fin de la liste <code>lst</code> tous les éléments de la liste <code>lst2</code>>&nbsp;;</li>
+                    <li><span class="codePython">lst.insert(nb,elt)</span> : insère un élément en position nb dans la liste <code>lst</code>.</li>
                 </ul>
                 <ul> <b>Enlever des éléments de la liste</b>
-                    <li><span class="codePython">pop()</span> : enlève le dernier élément de la liste&nbsp;;<br/> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="codePython">pop(nb)</span> crée une nouvelle liste avec les valeurs rangées dans l'ordre croissant&nbsp;;</li>
-                    <li><span class="codePython">del(liste[index])</span> : supprime l'élément de la liste dont on donne l'index (attention à ne pas dépasser la longueur de la liste)&nbsp;;</li>
-                    <li><span class="codePython">remove(elt)</span> : supprime l'élément de la liste (à condition qu'il soit présent).</li>
+                    <li><span class="codePython">a=lst.pop()</span> : enlève le dernier élément de la liste <code>lst</code>, la variable <code>a</code> prenant la valeur de cet élément supprimé&nbsp;;<br/> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="codePython">a=lst.pop(nb)</span> : enlève l'élément d'index <code>nb</code> de la liste <code>lst</code>, la variable <code>a</code> prenant la valeur de cet élément supprimé&nbsp;;</li>
+                    <li><span class="codePython">del(lst[index])</span> : supprime l'élément de la liste dont on donne l'index (attention à ne pas dépasser la longueur de la liste)&nbsp;;</li>
+                    <li><span class="codePython">lst.remove(elt)</span> : supprime l'élément de la liste <code>lst</code> (à condition qu'il soit présent).</li>
                 </ul>
                 <ul><b>Extraire des éléments de la listes : slice</b>
-                    <li><span class="codePython">l1[5:]</span> : extrait les éléments de l1 à partir de l'index 5&nbsp;;</li>
-                    <li><span class="codePython">l1[:8]</span> : extrait les éléments de l1 les 8 premiers éléments&nbsp;;</li>
-                    <li><span class="codePython">l1[5:8]</span> : extrait les éléments de l1 de l'index 5 à l'index 7&nbsp;;</li>
-                    <li><span class="codePython">l1[:]</span> : créé une copie de la liste l1.</li>
+                    <li><span class="codePython">lst[5:]</span> : extrait les éléments de <code>lst</code> à partir de l'index 5&nbsp;;</li>
+                    <li><span class="codePython">lst[:8]</span> : extrait les 8 premiers éléments de <code>lst</code>&nbsp;;</li>
+                    <li><span class="codePython">lst[5:8]</span> : extrait les éléments de <code>lst</code> de l'index 5 à l'index 7&nbsp;;</li>
+                    <li><span class="codePython">lst[:]</span> : créé une copie de la liste <code>lst</code>.</li>
                 </ul>
                 <ul> <b>Copie de liste</b><br/>
                     <span class="codePython">l2=list(l1)</span>, <span class="codePython">l2=l1[:]</span> et <span class="codePython">l2=l1.copy()</span> sont des instructions équivalentes qui permettent de copier les éléments de l1 dans l2.<br/> Dans
