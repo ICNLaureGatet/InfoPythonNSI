@@ -54,7 +54,7 @@ header>h2 {
     background-color: transparent;
 }
 
-.codePython {
+code, pre, .codePython {
     /*Utilisé pour tout code python*/
     background-color: white;
     border: dashed black 1px;
