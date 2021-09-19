@@ -28,8 +28,8 @@
             <li class="deroulant"><a href="#" id="navpremiersPas">Premiers pas &ensp;</a>
                 <ul class="sous">
                     <li id="navvariables"><a href="#">variables</a></li>
-                    <li id="navboucles"><a href="#">boucles</a></li>
                     <li id="navconditions"><a href="#">structures conditionnelles</a></li>
+                    <li id="navboucles"><a href="#">boucles</a></li>
                     <li id="navfonctions"><a href="#">fonctions</a></li>
                 </ul>
             </li>
@@ -104,54 +104,9 @@
                 </ul>
             </p>
             <p class="diaporama">
-                <a href="https://slideplayer.fr/slide/2884648/10/images/20/R%C3%A9f%C3%A9rences+d%E2%80%99objet+2+1+V%C3%A9ritable+sens+de+l%E2%80%99affectation.jpg" target="_blank"><img class="imageDiapo" src="images/imageVariables.jpg"></a>
+                <a href="https://slideplayer.fr/slide/2884648/10/images/20/R%C3%A9f%C3%A9rences+d%E2%80%99objet+2+1+V%C3%A9ritable+sens+de+l%E2%80%99affectation.jpg" target="_blank"><img src="images/imageVariables.jpg"></a>
             </p>
         </div>
-
-
-        <div id="boucles">
-            <h2>Les boucles</h2>
-            <p>Toute répétition d'actions similaires s'effectue sous la forme d'une boucle dans tout langage de programmation.<br/> En python, on distingue deux boucles : <strong>for</strong> (&laquo;pour&raquo;) et <strong>while</strong> (&laquo;tant que&raquo;).<br/>
-            </p>
-            <h3>Boucle for</h3>
-            <p>Ce type de boucles s'écrit sous la forme :<br/>
-                <div class="codePython"><span class="motCle">for</span> <i>variable</i> <span class="motCle">in</span> <i>iterable</i>:<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <i>instructions</i>
-                </div>
-                Un iterable peut être construit avec la fonction range, une chaîne de caractères, un tuple, une liste, ...<br/> La variable prendra successivement les valeurs de l'itérable et les instructions seront effectuées autant de fois qu'il y a
-                d'éléments dans l'itérable.<br/>
-            </p>
-            <p><u>Exemple :</u><br/>
-                <div class="codePython">
-                    montexte="texte initial"<br/> nouveauTxt = montexte[0]<br/>
-                    <span class="motCle">for</span> lettre <span class="motCle">in</span> montexte[1:]:<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nouveauTxt+="_"+lettre
-                </div>
-                À la fin de ce programme, nouveauTxt vaut "t_e_x_t_e_ _i_n_i_t_i_a_l".
-            </p>
-            <h3>Boucle while</h3>
-            <p>Une boucle while s'écrit sous la forme :<br/>
-                <div class="codePython"><span class="motCle">while</span> <i>condition</i>:<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <i>instructions</i>
-                </div>
-                où condition est un booléen.<br/> Les instructions sont effectuées tant que la condition vaut True.<br/>
-                <strong>Il est donc impératif que la condition puisse évoluer au cours des instructions (l'évolution d'une variable suffit parfois) de sorte qu'elle passe à False. Sinon la boucle devient infinie.</strong>
-            </p>
-            <p><u>Exemple :</u><br/>
-                <div class="codePython">
-                    montexte="texte initial"<br/> nouveauTxt2 = montexte[0]<br/> i=1
-                    <br/>
-                    <span class="motCle">while</span> montexte[i]!="i":<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nouveauTxt2+="_"+montexte[i]
-                    <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1
-                </div>
-                À la fin de ce programme, nouveauTxt2 vaut "t_e_x_t_e_ ".<br/> On a parcouru chaque lettre de la chaîne de caractère jusqu'à ce qu'on tombe sur un "i".<br/> Si la chaîne n'avait pas eu cette lettre "i", la boucle ne se serait pas arrêtée.
-                On aurait pu le vérifier auparavant ou ajouter une condition d'arrêt supplémentaire (sur la longueur de la chaîne):
-                <div class="codePython"><span class="motCle">while</span> montexte[i]!="i" <span class="motCle">and</span> i&lt;len(montexte):<br/></div>
-            </p>
-            <p class="diaporama">
-                <a href="http://fsincere.free.fr/isn/python/cours_python_ch3.php" target="_blank"><img class="imageDiapo" src="images/imageBoucles.png"></a>
-            </p>
-        </div>
-
 
         <div id="conditions">
             <h2>Les structures conditionnelles</h2>
@@ -201,9 +156,107 @@
             <p>On peut aussi utiliser la syntaxe <span class="codePython"><span class="motCle">if</span> a <span class="motCle">is not</span> True</span>.
             </p>
             <p class="diaporama">
-                <a href="http://www.ressourcesducongo.net/2018/03/tutorielpython3-initiation-a-la-programmation-15-atelier-pratique-script-6-simulateur-de-mention-au-bac-elements-de-reponse.html" target="_blank"><img class="imageDiapo" src="images/imageConditions.jpg"></a>
+                <a href="http://www.ressourcesducongo.net/2018/03/tutorielpython3-initiation-a-la-programmation-15-atelier-pratique-script-6-simulateur-de-mention-au-bac-elements-de-reponse.html" target="_blank"><img src="images/imageConditions.jpg"></a>
             </p>
         </div>
+
+        <div id="boucles">
+            <h2>Les boucles</h2>
+            <p>Toute répétition d'actions similaires s'effectue sous la forme d'une boucle dans tout langage de programmation.<br/> En python, on distingue deux boucles : <strong>for</strong> (&laquo;pour&raquo;) et <strong>while</strong> (&laquo;tant que&raquo;).<br/>
+            </p>
+            <h3>Boucle for</h3>
+            <p>Ce type de boucles s'écrit sous la forme :<br/>
+                <div class="codePython"><span class="motCle">for</span> <i>variable</i> <span class="motCle">in</span> <i>iterable</i>:<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i>instructions</i>
+                </div>
+                Un iterable peut être construit avec la fonction range, une chaîne de caractères, un tuple, une liste, ...<br/> La variable prendra successivement les valeurs de l'itérable et les instructions seront effectuées autant de fois qu'il y a
+                d'éléments dans l'itérable.<br/>
+            </p>
+            <p><u>Exemples :</u>
+                <ul>
+                    <li><i>Avec la fonction <code>range</code></i><br/>
+                        Cette fonction permet de donner à une variable une succession de valeurs entières : 
+                        <ul>
+                            <li>pour avoir tous les entiers allant de 0 à 6 (ou pour passer 7 fois dans une boucle) :
+                            <pre>for i in range(7):</pre></li>
+                            <li>pour avoir tous les entiers allant de 5 à 10:
+                                <pre>for i in range(5, 11)</pre>
+                            </li>
+                            <li>pour avoir tous les entiers allant de 10 à 20 avec un pas de 2 (ce qui revient à avoir les entiers pairs):
+                                <pre>for i in range(10, 21, 2)</pre>
+                            </li>
+                        </ul>
+                        <strong>Remarque :</strong> j'ai utilisé la variable <code>i</code> dans chacun des cas. C'est judicieux car c'est un entier et <code>i</code> veut dire <i>Integer</i>.
+                    </li>
+                    <li><i>Avec une chaîne de caractères :</i>
+                <pre class="codePython">
+montexte="texte initial"
+nouveauTxt = montexte[0]
+<span class="motCle">for</span> lettre <span class="motCle">in</span> montexte[1:]:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nouveauTxt+="_"+lettre
+                </pre>
+                À la fin de ce programme, <code>nouveauTxt</code> vaut "t_e_x_t_e_ _i_n_i_t_i_a_l".<br/>
+            <strong>Remarque :</strong> j'ai utilisé la variable <code>lettre</code> pour signaler que ceci désigne à chaque étape un caractère de la chaîne. On utilise aussi régulièrement <code>car</code> ou <code>let</code>.
+        
+                Une chaîne de caractère peut être parcourue d'une autre façon : avec les index qui sont les positions successives des caractères.<br/>
+                C'est très utile quand on cherche la position d'un caractère dans une chaîne.
+                <pre>
+index = None
+chaine = "j'écris un texte au hasard"
+for i in range(len(chaine)):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if chaine[i] == " ":
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = i
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break
+                </pre>
+                <code>i</code> prendra comme valeurs successives les entiers allant de 0 à len(chaine)-1, len(chaine) étant la longueur de la chaîne.<br/>
+                Ce code est repris dans la partie sur les fonctions car écrit ainsi, ce n'est pas très joli (l'intialisation de index à None et surtout le <code>break</code>).
+            </li>
+
+            </ul>
+            </p>
+            <h3>Boucle while</h3>
+            <p>Une boucle while s'écrit sous la forme :<br/>
+                <div class="codePython"><span class="motCle">while</span> <i>condition</i>:<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i>instructions</i>
+                </div>
+                où condition est un booléen.<br/> Les instructions sont effectuées tant que la condition vaut True.<br/>
+                <strong>Il est donc impératif que la condition puisse évoluer au cours des instructions (l'évolution d'une variable suffit parfois) de sorte qu'elle passe à False. Sinon la boucle devient infinie.</strong>
+            </p>
+            <p><u><i>Exemples</i> :</u>
+                <ul><li>Sur un texte
+                <pre class="codePython">
+montexte="texte initial"
+nouveauTxt2 = montexte[0]
+i=1
+<span class="motCle">while</span> montexte[i]!="i":
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nouveauTxt2+="_"+montexte[i]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1
+                </pre>
+                À la fin de ce programme, nouveauTxt2 vaut "t_e_x_t_e_ ".<br/> On a parcouru chaque lettre de la chaîne de caractère jusqu'à ce qu'on tombe sur un "i".<br/> Si la chaîne n'avait pas eu cette lettre "i", la boucle ne se serait pas arrêtée.
+                On aurait pu le vérifier auparavant ou ajouter une condition d'arrêt supplémentaire (sur la longueur de la chaîne):
+                <div class="codePython"><span class="motCle">while</span> montexte[i]!="i" <span class="motCle">and</span> i&lt;len(montexte):</div>
+                </li>
+                <li><i>Sur des nombres</i> : par exemple une variable u vaut 1 au départ et à chaque étape on la multiplie par 3 et on lui soustrait 1. On s'arrête quand cette variable dépasse 100.<br/>
+                    On compte alors le nombre d'étapes nécessaires pour dépasser 100.
+                    <pre>
+u=1
+nb_etapes = 0
+while u<100:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u = 3*u-1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nb_etapes += 1
+print(nb_etapes)
+                    </pre>
+
+                </li>
+            </ul>
+            </p>
+            <p class="diaporama">
+                <a href="http://fsincere.free.fr/isn/python/cours_python_ch3.php" target="_blank"><img src="images/imageBoucles.png"></a>
+            </p>
+        </div>
+
+
+        
 
 
         <div id="fonctions">
@@ -222,14 +275,27 @@
             </p>
             <p>Python contient des fonctions de base :
                 <ul>
-                    <li>bin, hex pour les conversions en binaire ou hexadécimal;</li>
-                    <li>str, int, pour les conversions en chaîne de caractères ou en entier;</li>
-                    <li>chr et ord pour le passage d'un nombre au caractère dans la table ascii et inversement;</li>
+                    <li><code>print</code> qui permet l'affichage de valeurs. ATTENTION car ce n'est utile que pour que le programmeur puisse vérifier des résultats.</li>
+                    <li><code>bin</code>, <code>hex</code> pour les conversions en binaire ou hexadécimal;</li>
+                    <li><code>str</code>, <code>int</code>, pour les conversions en chaîne de caractères ou en entier;</li>
+                    <li><code>isinstance</code>, pour vérifier la nature d'une variable</li>
+                    <li><code>chr</code> et <code>ord</code> pour le passage d'un nombre au caractère dans la table ascii et inversement;</li>
                 </ul>
+            </p>
+            <p>Il est très courant de retrouver dans un fonction des boucles et/ou des instructions conditionnelles :<br/>
+            Reprenons l'exemple de la détermination de la première position d'un caractère dans une chaîne (exemple donné dans la partie sur les boucles) :
+        <pre>
+def position(chaine, car):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in range(len(chaine)):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if chaine[i] == car:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return i
+        </pre>
+        L'appel <code>position("j'écris un texte au hasard", " ")</code> renvoie l'index où se situe le premier espace dans la chaîne de caractère.<br/>
+        Ce code devient équivalent à ce qui avait été fait sans fonction, mais plus lisible et pratique.
             </p>
             <p class="diaporama">
                 <a href="https://www.google.fr/search?hl=fr&tbm=isch&sa=1&ei=jMexXcrRKrPDxgPrhJioCg&q=fonction+en+python&oq=fonction+en+python&gs_l=img.3..0j0i24l3.200099.201666..202277...0.0..0.150.1058.0j9......0....1..gws-wiz-img.......0i7i30j0i7i5i30j0i8i7i30.f03h7jj8q-I&ved=0ahUKEwjKx4qZn7XlAhWzoXEKHWsCBqUQ4dUDCAY&uact=5#imgrc=xaphOpklzLfwAM:"
-                    target="_blank"><img class="imageDiapo" src="images/imageFonctions.jpg"></a>
+                    target="_blank"><img src="images/imageFonctions.jpg"></a>
             </p>
         </div>
     </div>
@@ -272,7 +338,7 @@
                 Cette affectation multiple est surtout pratique dans les fonctions.
             </p>
             <p class="diaporama">
-                <a href="https://livebook.manning.com/book/python-workout/chapter-3/v-2/34" target="_blank"><img class="imageDiapo" src="images/imageTuples.png"></a>
+                <a href="https://livebook.manning.com/book/python-workout/chapter-3/v-2/34" target="_blank"><img src="images/imageTuples.png"></a>
             </p>
         </div>
         <div id="listes">
@@ -292,6 +358,9 @@ l=[["a","b"],["c","d","e"],["f","g"]] <span class="comment"># liste de 3 éléme
             </p>
             <p>La longueur de la liste est déterminée comme pour une chaîne de caractères ou un tuple : <span class="codePython">len(l)</span></p>
             <p>Pour une liste de nombre, on peut aussi déterminer la somme des valeurs : <span class="codePython">sum(l)</span></p>
+
+            
+
 
             <h3>Méthodes sur les listes</h3>
             <p>
@@ -341,6 +410,41 @@ l2[1][0]="k" <span class="comment">#l2 devient [["a","b"],["k","d","e"],["f","g"
                 </ul>
             </p>
 
+            <h3>Parcours d'une liste</h3>
+            Il existe deux façons de parcourir une liste avec une boucle <code>for</code>:
+            <ul>
+                <li>parcourir chacun des éléments</li>
+                <pre>for elt in liste:</pre>
+                <li>parcourir la liste par les index</li>
+                <pre>for i in range(len(liste)):</pre>
+            </ul>
+
+            <p><u>Exemples :</u>
+            <ul>
+                <li>Pour compter le nombre de fois où une valeur apparaît (fonction <code>nb_occur</code> d'arguments une liste et une valeur):
+                    <pre>
+def nb_occur(liste, val):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nb = 0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for elt in liste:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if elt == val:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nb += 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return nb
+                    </pre>
+                    Exemple très classique où on initialise une variable, puis en parcourant la liste terme à terme, on ajoute 1 à cette variable quand on trouve la valeur.
+                </li>
+                <li>Pour déterminer toutes les positions d'une valeur dans une liste (fonction <code>positions</code> d'arguments une liste et une valeur et qui renvoie une liste):
+                    <pre>
+def positions(liste, val):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lst_val = []
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in range(len(liste)):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if elt == val:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lst_val.append(i)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return lst_val
+                    </pre>
+                    Exemple là aussi classique où on initialise une liste vide, puis en parcourant la liste terme à terme par les index, on ajoute l'index à notre nouvelle liste quand on trouve la valeur.
+                </li>
+            </ul></p>
+            
             <h3>Listes en compréhension</h3>
             <p>Voici les différentes structures de listes en compréhension avec leur équivalent en écriture plus classique :</p>
             <ul>
@@ -386,7 +490,7 @@ l2[1][0]="k" <span class="comment">#l2 devient [["a","b"],["k","d","e"],["f","g"
                 </li>
             </ul>
             <p class="diaporama">
-                <a href="https://python.sdv.univ-paris-diderot.fr/11_plus_sur_les_listes/" target="_blank"><img class="imageDiapo" src="images/imageListes.png"></a>
+                <a href="https://python.sdv.univ-paris-diderot.fr/11_plus_sur_les_listes/" target="_blank"><img src="images/imageListes.png"></a>
             </p>
         </div>
 
