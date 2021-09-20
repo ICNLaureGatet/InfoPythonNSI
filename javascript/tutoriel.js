@@ -1,8 +1,9 @@
-let listeChap = ["premiersPas", "tuplesListes", "dictionnaires", "imagesExemples"];
+let listeChap = ["premiersPas", "tuplesListes", "dictionnaires", "imagesExemples", "carteMentale"];
 let listeSousPartie = [
     ["variables", "boucles", "conditions", "fonctions"],
     ["tuples", "listes"],
     ["dicos", "donnees"],
+    [],
     []
 ];
 let contenuDiv = {}; //j'en fais un objet plutôt qu'une liste
