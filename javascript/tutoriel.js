@@ -4,7 +4,7 @@ let listeSousPartie = [
     ["tuples", "listes"],
     ["dicos", "donnees"],
     [],
-    []
+    ["cartePour", "carteWhile"]
 ];
 let contenuDiv = {}; //j'en fais un objet plutôt qu'une liste
 let numImage = 0;
